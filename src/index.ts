@@ -13,9 +13,10 @@ dclient.on('message', (msg: Message<boolean>) => {
     if (msg.content !== 'remove wordle complete') return;
     const wordlePlayer = '934164576403087391';
     const wordleComplete = '934174868117794937';
+    let wordleCompleteRole = msg.guild.roles.cache.find(role => role.id == wordlePlayer);
     msg.guild.members.cache.forEach(member => {
         if (member.roles.cache.some(role => role.id == wordleComplete)) {
-            member.roles.remove(wordleComplete);
+            member.roles.remove(wordleCompleteRole);
         }
     });
     (msg.channel as any).send('Success!');
