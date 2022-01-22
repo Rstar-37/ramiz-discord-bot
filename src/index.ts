@@ -12,7 +12,7 @@ dclient.on('message', (msg: Message<boolean>) => {
     const mod = '934241462533627905';
     let hasMod = msg.member.roles.cache.find(role => role.id == mod)
     if (!hasMod) return;
-    // if (msg.channelId !== '934174624122535976') return;
+    if (msg.channelId !== '934174624122535976') return;
     if (!msg.content.startsWith('A New Wordle just started!')) return;
     // if (!msg.content.startsWith('..')) return;
     const wordlePlayer = '934164576403087391';
