@@ -13,8 +13,8 @@ dclient.on('message', (msg: Message<boolean>) => {
     let hasMod = msg.member.roles.cache.find(role => role.id == mod)
     if (!hasMod) return;
     // if (msg.channelId !== '934174624122535976') return;
-    // if (!msg.content.startsWith('A New Wordle just started!')) return;
-    if (!msg.content.startsWith('..')) return;
+    if (!msg.content.startsWith('A New Wordle just started!')) return;
+    // if (!msg.content.startsWith('..')) return;
     const wordlePlayer = '934164576403087391';
     const wordleComplete = '934174868117794937';
     const wordleCompleteRole = msg.guild.roles.cache.find(role => role.id == wordleComplete);
